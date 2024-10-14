@@ -1,1 +1,55 @@
+Advanced Encryption Standard (AES)
 
+AES (Advanced Encryption Standard) is a symmetric encryption algorithm widely used across the globe for securing sensitive data. It was established by the U.S. National Institute of Standards and Technology (NIST) in 2001. It replaced the Data Encryption Standard (DES) due to DES's vulnerability to brute-force attacks.
+
+Key Characteristics:
+Symmetric Key Algorithm: AES uses the same key for both encryption and decryption.
+Block Cipher: It encrypts data in fixed-size blocks of 128 bits (16 bytes).
+Key Sizes: AES supports three different key lengths:
+AES-128 (128-bit key)
+AES-192 (192-bit key)
+AES-256 (256-bit key)
+How AES Works:
+AES operates on a block of data (128 bits) in a series of transformations across multiple rounds. The number of rounds depends on the key size:
+
+AES-128: 10 rounds
+AES-192: 12 rounds
+AES-256: 14 rounds
+Steps involved in AES encryption:
+Key Expansion: The encryption key is expanded into multiple subkeys for each round.
+Initial Round: AddRoundKey - The initial block of data is combined with the first subkey.
+Main Rounds (9/11/13 rounds depending on key size):
+SubBytes: A substitution step where each byte is replaced with another according to a predefined lookup table (S-box).
+ShiftRows: A permutation step where rows of the matrix are shifted.
+MixColumns: A mixing step where columns are transformed using matrix multiplication.
+AddRoundKey: The data is XORed with a round-specific subkey.
+Final Round (without MixColumns):
+SubBytes
+ShiftRows
+AddRoundKey
+Steps in AES decryption:
+The decryption process is essentially the reverse of encryption using the same key. The main operations (SubBytes, ShiftRows, and MixColumns) are inverted in the following way:
+
+Key Expansion: The same key expansion method is used.
+Initial Round: AddRoundKey with the last round's subkey.
+Main Rounds: Inverse operations of ShiftRows, SubBytes, and MixColumns.
+Final Round: AddRoundKey.
+Modes of Operation:
+AES can be used in various modes of operation to encrypt longer data streams. Common modes include:
+
+ECB (Electronic Codebook): Simple but insecure for repetitive data patterns.
+CBC (Cipher Block Chaining): Each block is XORed with the previous ciphertext block before being encrypted, making it more secure.
+CFB (Cipher Feedback) and OFB (Output Feedback): Stream cipher modes that turn AES into a stream cipher.
+GCM (Galois/Counter Mode): Provides both encryption and authentication, widely used in secure communications.
+Advantages of AES:
+High Security: AES is considered very secure and is used by governments and organizations worldwide.
+Efficiency: AES is designed to be fast in both hardware and software implementations.
+Flexibility: Supports multiple key lengths and various operational modes.
+Resistance to Attacks: AES is resistant to known attacks, including brute force and differential cryptanalysis.
+Applications of AES:
+Secure communications (e.g., TLS/SSL)
+Disk encryption
+Wireless security (e.g., WPA2 for Wi-Fi networks)
+Data protection in various software and hardware products
+Conclusion:
+AES is a versatile and robust encryption standard suitable for many applications, from securing communication to encrypting sensitive data at rest. It has become the de facto standard for encryption due to its security, efficiency, and flexibility.
