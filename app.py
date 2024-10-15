@@ -1,11 +1,12 @@
 import streamlit as st
-import os
 import binascii
+import os
 from file_utils import encrypt_file, decrypt_file
 from config import ENCRYPTED_DIR, DECRYPTED_DIR
 
 def main():
-    st.title("File Encryption/Decryption using AES")
+    st.set_page_config(page_title="AES", page_icon="🔒")
+    st.title("AES Encryption App")
 
     action = st.radio("Choose action:", ("Encrypt", "Decrypt"))
     uploaded_file = st.file_uploader("Choose a file", type=["txt", "pdf", "docx"])
